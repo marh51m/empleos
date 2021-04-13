@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Vacante</title>
+</head>
+<body>
+<header th:insert="fragmentos/menu.html :: menu-principal">
+     
+    </header>
+	<h2>Detalles de la Vacante</h2>
+	<!--
+	<span th:text="'Id vacante: ' + ${id} " ></span> <br>
+	<span th:text="'Nombre vacante: ' + ${nombre} " ></span><br>
+	<span th:text="'Fecha publicacion: ' + ${fecha} " ></span><br>
+	<span th:text="'Salario aproximado: ' + ${salario} " ></span><br>
+	<span th:text="'Vigente: ' + ${vigente} " ></span>
+	 -->
+
+	<!-- Iterar un arreglo -->
+	<ol>
+		<li th:each="elemento: ${vacantes}" th:text="${elemento}"></li>
+	</ol>
+	
+	<!-- desplegando una tabla -->
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Nombre de la Vacante</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="elemento: ${vacantes}">
+				<td th:text="${elemento}"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+<footer class="footer" th:insert="fragmentos/pie.html :: pie-pagina">
+      
+    </footer>
+</html>
+
+
+
+
+
+
+
+
+
+
+
