@@ -22,7 +22,7 @@ public class DatabaseWebSecurity extends WebSecurityConfigurerAdapter {
 		//Configuracion por default usando la base de datos de spring security
 		auth.jdbcAuthentication().dataSource(dataSource)
 		.usersByUsernameQuery("select username, password, estatus from usuarios where username=?")
-		.authoritiesByUsernameQuery("select u.username, p.perfil from usuarioPerfil up " +
+		.authoritiesByUsernameQuery("select u.username, p.perfil from usuarioperfil up " +
 		"inner join usuarios u on u.id = up.idUsuario " +
 		"inner join perfiles p on p.id = up.idPerfil " +
 		"where u.username = ?");
